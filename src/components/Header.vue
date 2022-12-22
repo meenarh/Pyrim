@@ -14,7 +14,7 @@
 
         <div class="flex w-[5.0625rem] gap-[0.5rem]">
             <p class="text-white pt-2">Cart</p>
-            <div class="bg-[#ffffff] w-[2.5rem] h-[2.5rem] flex justify-center items-center text-lg">0</div>
+            <div class="bg-[#ffffff] w-[2.5rem] h-[2.5rem] flex justify-center items-center"><p class="text-lg text-center">0</p></div>
         </div>
     </div>
 </template>
