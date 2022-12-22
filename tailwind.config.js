@@ -7,6 +7,9 @@ module.exports = {
       colors: {
         'bg-color': '#3D3939',
       },
+      fontFamily: {
+        'sans': ['Playfair Display', 'sans-serif'],
+      },
     },
   },
   variants: {
