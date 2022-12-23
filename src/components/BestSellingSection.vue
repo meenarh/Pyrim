@@ -84,7 +84,7 @@
                     <p class="text">Name of Product</p>
                     <p class="text">#6500</p>
                 </div>
-                <p>Category</p>
+                <p>{{ product.category }}</p>
             </div>
             <div class="flex justify-center items-center px-px-[20px 32px] border-solid border-2 h-[3.6875rem] w-[24.5rem]">
                 <p class="text">
@@ -113,7 +113,28 @@
     </div>
 </template>
 <script>
+import axios from '@/axios'
 export default {
-    name: `"BestSellingSection"`
+    name: `"BestSellingSection"`,
+    data () {
+        return {
+            products: {}
+        }
+    },
+    props: {
+        id: {
+            type: Number
+        }
+    },
+    methods: {
+        async getProduct(id) {
+            await axios.get(`products/${id}/`).then(response => {
+                this.product = response.data
+            })
+        }
+    },
+    created () {
+        this.getProduct(this.id);
+    }
 }
 </script>

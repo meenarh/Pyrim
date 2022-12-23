@@ -23,7 +23,11 @@
 </template>
 
 <script>
+
 export default {
-    name: `"FashionSection"`
+    name: `"FashionSection"`,
+    components: {
+        
+    }
 }
 </script>
