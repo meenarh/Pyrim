@@ -1,6 +1,6 @@
 <template>
-    <div class="flex flex-col items-start gap-[24px] h-[42.8125rem] mx-auto m-auto px-[100px]">
-        <div><p class="font-['Playfair_Display'] text-[#371D1B] text-[40px] leading-[3.3125rem]">Popular Products</p></div>
+    <div class="flex flex-col items-start gap-[24px] h-[42.8125rem] mx-auto m-auto px-[100px] font-sans">
+        <div><p class="text-[#371D1B] text-[40px] leading-[3.3125rem]">Popular Products</p></div>
     <div class="flex gap-[32px] w-[]">
         <div class="flex flex-col items-start gap-[24px] h-[38rem]" >
             <div class="w-[24.5rem] h-[28.125rem]">

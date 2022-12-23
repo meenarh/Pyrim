@@ -2,31 +2,30 @@
 <div>
   <Header />
   <FirstSection />
-  <Footer />
   <PopularSection />
   <FashionSection />
   <BestSellingSection />
+  <Footer />
+
 </div>
 </template>
 
 <script>
 import Header from './components/Header'
 import FirstSection from './components/FirstSection'
-import Footer from './components/Footer'
 import PopularSection from './components/PopularSection'
 import BestSellingSection from './components/BestSellingSection'
+import Footer from './components/Footer'
 import FashionSection from './components/FashsionSection'
 export default {
   name: 'App',
   components: {
     Header,
     FirstSection,
-    Footer,
     PopularSection,
     BestSellingSection,
-    FashionSection
+    FashionSection,
+    Footer
   }
 };
 </script>
-
-
