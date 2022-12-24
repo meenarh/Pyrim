@@ -10,7 +10,7 @@
     </div>
     <div class="p-4">
       <input
-        class="p-3 bg-[#42302F] w-[492px] h-[60px] text-white font-normal text-sm]"
+        class="p-3 bg-[#42302F] w-[492px] h-[60px] text-white font-normal text-sm outline-none"
         type="email"
         placeholder="Enter your email"
       />
