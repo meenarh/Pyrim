@@ -1,140 +1,84 @@
 <template>
-    <div class="flex flex-col items-start gap-[24px] h-[42.8125rem] mx-auto m-auto px-[100px]">
-        <div><p class="font-['Playfair_Display'] text-[#371D1B] text-[40px]">Popular Products</p></div>
-    <div class="flex gap-[32px] w-[]">
-        <div class="flex flex-col items-start gap-[24px] h-[38rem]" >
-            <div class="w-[24.5rem] h-[28.125rem]">
-                <img class="" src="../assets/product.png" />
-            </div>
-            <div class="flex flex-col items-start gap-[8px]">
-                <div class="flex justify-between content-between items-center gap-[210px] w-[24.5rem]">
-                    <p class="text">Name of Product</p>
-                    <p class="text">#6500</p>
-                </div>
-                <p>Category</p>
-            </div>
-            <div class="flex justify-center items-center px-px-[20px 32px] border-solid border-2 h-[3.6875rem] w-[24.5rem]">
-                <p class="text">
-                    Add Product to Cart
-                </p>
-            </div>
-        </div>
-        <div class="flex flex-col items-start gap-[24px] h-[38rem]" >
-            <div class="w-[24.5rem] h-[28.125rem]">
-                <img class="" src="../assets/product.png" />
-            </div>
-            <div class="flex flex-col items-start gap-[8px]">
-                <div class="flex justify-between content-between items-center gap-[210px] w-[24.5rem]">
-                    <p class="text">Name of Product</p>
-                    <p class="text">#6500</p>
-                </div>
-                <p>Category</p>
-            </div>
-            <div class="flex justify-center items-center px-px-[20px 32px] border-solid border-2 h-[3.6875rem] w-[24.5rem]">
-                <p class="text">
-                    Add Product to Cart
-                </p>
-            </div>
-        </div>
-        <div class="flex flex-col items-start gap-[24px] h-[38rem]" >
-            <div class="w-[24.5rem] h-[28.125rem]">
-                <img class="" src="../assets/product.png" />
-            </div>
-            <div class="flex flex-col items-start gap-[8px]">
-                <div class="flex justify-between content-between items-center gap-[210px] w-[24.5rem]">
-                    <p class="text">Name of Product</p>
-                    <p class="text">#6500</p>
-                </div>
-                <p>Category</p>
-            </div>
-            <div class="flex justify-center items-center px-px-[20px 32px] border-solid border-2 h-[3.6875rem] w-[24.5rem]">
-                <p class="text">
-                    Add Product to Cart
-                </p>
-            </div>
-        </div>
+  <div
+    class="flex flex-col items-start gap-[24px] h-[100.8125rem] mx-auto m-auto px-[100px]"
+  >
+    <div>
+      <p class="font-['Playfair_Display'] text-[#371D1B] text-[40px]">
+        Best Selling Products
+      </p>
     </div>
-    </div>
-    <div class="flex flex-col items-start gap-[24px] h-[42.8125rem] mx-auto m-auto px-[100px]">
-        <div><p class="font-['Playfair_Display'] text-[#371D1B] text-[40px]"></p></div>
-    <div class="flex gap-[32px] w-[]">
-        <div class="flex flex-col items-start gap-[24px] h-[38rem]" >
-            <div class="w-[24.5rem] h-[28.125rem]">
-                <img class="" src="../assets/product.png" />
+    <div class="grid grid-cols-3 gap-[32px]">
+      <div v-for="item of items" v-bind:key="item.id">
+        <div>
+          <div class="flex flex-col items-start gap-[24px] h-[50rem]">
+            <div class="w-[24.5rem] h-[30.125rem]">
+              <img style="width: 350px; height: 400px;" class="mt-10" :src="item.image" />
             </div>
-            <div class="flex flex-col items-start gap-[8px]">
-                <div class="flex justify-between content-between items-center gap-[210px] w-[24.5rem]">
-                    <p class="text">Name of Product</p>
-                    <p class="text">#6500</p>
-                </div>
-                <p>Category</p>
+            <div class="flex flex-col items-start gap-[8px] h-[5rem]">
+              <div
+                class="flex justify-between content-between items-center gap-[130px] w-[24.5rem] h-[3.6875rem]]"
+              >
+                <p class="text">{{ item.title }}</p>
+                <p class="text">{{ realPrice(item.price) }}</p>
+              </div>
+              <p>{{ item.category }}</p>
             </div>
-            <div class="flex justify-center items-center px-px-[20px 32px] border-solid border-2 h-[3.6875rem] w-[24.5rem]">
-                <p class="text">
-                    Add Product to Cart
-                </p>
+            <div
+              class="flex justify-center items-center px-[32px] border-solid border-2 h-[3.6875rem] w-[24.5rem]"
+            >
+              <button @click="addToCart(item.id)" class="text">Add Product to Cart</button>
             </div>
+          </div>
         </div>
-        <div class="flex flex-col items-start gap-[24px] h-[38rem]" >
-            <div class="w-[24.5rem] h-[28.125rem]">
-                <img class="" src="../assets/product.png" />
-            </div>
-            <div class="flex flex-col items-start gap-[8px]">
-                <div class="flex justify-between content-between items-center gap-[210px] w-[24.5rem]">
-                    <p class="text">Name of Product</p>
-                    <p class="text">#6500</p>
-                </div>
-                <p>{{ product.category }}</p>
-            </div>
-            <div class="flex justify-center items-center px-px-[20px 32px] border-solid border-2 h-[3.6875rem] w-[24.5rem]">
-                <p class="text">
-                    Add Product to Cart
-                </p>
-            </div>
-        </div>
-        <div class="flex flex-col items-start gap-[24px] h-[38rem]" >
-            <div class="w-[24.5rem] h-[28.125rem]">
-                <img class="" src="../assets/product.png" />
-            </div>
-            <div class="flex flex-col items-start gap-[8px]">
-                <div class="flex justify-between content-between items-center gap-[210px] w-[24.5rem]">
-                    <p class="text">Name of Product</p>
-                    <p class="text">#6500</p>
-                </div>
-                <p>Category</p>
-            </div>
-            <div class="flex justify-center items-center px-px-[20px 32px] border-solid border-2 h-[3.6875rem] w-[24.5rem]">
-                <p class="text">
-                    Add Product to Cart
-                </p>
-            </div>
-        </div>
+      </div>
     </div>
-    </div>
+  </div>
 </template>
+
 <script>
-import axios from '@/axios'
+import axios from "axios";
+
 export default {
-    name: `"BestSellingSection"`,
-    data () {
-        return {
-            products: {}
-        }
+  name: `"BestSellingSection"`,
+  data() {
+    return {
+      items: [],
+      itemsInCartIDs: [],
+    };
+  },
+  mounted() {
+    this.getStoreData();
+  },
+  methods: {
+    getStoreData() {
+      axios
+        .get("https://fakestoreapi.com/products")
+        .then((response) => {
+          this.items = response.data.slice(1, 5);
+        })
+
+        .catch((error) => {
+          console.log(error);
+        });
     },
-    props: {
-        id: {
-            type: Number
+    addToCart(id) {
+      const item = this.itemsInCartIDs.find((item) => item === id);
+      console.log(id)
+      try {
+        if (!item) {
+          this.itemsInCartIDs.push(item);
+        } else {
+        prompt("Product already exists inside the cart.");
         }
+      } catch (error) {
+        console.log(
+          error
+        );
+      }
     },
-    methods: {
-        async getProduct(id) {
-            await axios.get(`products/${id}/`).then(response => {
-                this.product = response.data
-            })
-        }
+    realPrice(oldPrice) {
+      return oldPrice * 1.022;
     },
-    created () {
-        this.getProduct(this.id);
-    }
-}
+  },
+};
 </script>
